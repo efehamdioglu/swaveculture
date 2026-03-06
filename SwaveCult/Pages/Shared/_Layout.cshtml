@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@(ViewData["Title"] != null ? ViewData["Title"] + " — " : "")SWAVE CULT</title>
+    <meta name="description" content="Swave Cult — Curated imports. Rare by nature.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    @await RenderSectionAsync("Styles", required: false)
+</head>
+<body>
+
+    <!-- Announcement -->
+    <div class="announce-bar">
+        ₺3.000 ÜZERİ ÜCRETSİZ KARGO &nbsp;·&nbsp; <span>SHOPIER</span> GÜVENCESİYLE ÖDE
+    </div>
+
+    <!-- Navigation -->
+    <nav class="sc-nav" id="mainNav">
+        <a href="/" class="nav-logo">
+            <img src="/images/logo.png" alt="Swave Cult" class="nav-logo-img">
+        </a>
+
+        <div class="nav-links">
+            <a href="/">ANA SAYFA</a>
+            <a href="/Shop">MAĞAZA</a>
+            <a href="/Drops">DROPS</a>
+        </div>
+
+        <div class="nav-right">
+            <!-- Cart icon -->
+            <button class="nav-icon-btn cart-toggle" id="cartToggle" aria-label="Sepet">
+                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6">
+                    <path d="M3 3h2l.4 2M7 13h10l2-8H5.4M7 13L5.4 5M7 13l-1.5 4h11" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="9" cy="19" r="1" fill="currentColor" stroke="none"/>
+                    <circle cx="16" cy="19" r="1" fill="currentColor" stroke="none"/>
+                </svg>
+                <span class="cart-badge" id="cartBadge" data-count="0">0</span>
+            </button>
+            <a href="/Drops" class="nav-drop-btn">SON DROP</a>
+        </div>
+
+        <button class="nav-toggle" id="navToggle" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <!-- Mobile Nav Overlay -->
+    <div class="mobile-nav" id="mobileNav" aria-hidden="true">
+        <button class="mobile-nav-close" id="mobileClose" aria-label="Kapat">✕</button>
+        <a href="/">ANA SAYFA</a>
+        <a href="/Shop">MAĞAZA</a>
+        <a href="/Drops">DROPS</a>
+    </div>
+
+    <main>
+        @RenderBody()
+    </main>
+
+    <!-- Footer -->
+    <footer class="sc-footer">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <a href="/" class="nav-logo">
+                    <img src="/images/logo.png" alt="Swave Cult" class="nav-logo-img">
+                </a>
+                <p>Dünyanın en önemli markalarından seçilmiş parçalar. Her ürün özenle temin edildi, her detay düşünüldü.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Menü</h4>
+                <ul>
+                    <li><a href="/">Ana Sayfa</a></li>
+                    <li><a href="/Shop">Mağaza</a></li>
+                    <li><a href="/Drops">Drops</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Kategoriler</h4>
+                <ul>
+                    <li><a href="/Shop?cat=tshirt">T-Shirtler</a></li>
+                    <li><a href="/Shop?cat=sweatshirt">Sweatshirtler</a></li>
+                    <li><a href="/Shop?cat=pants">Pantolonlar</a></li>
+                    <li><a href="/Shop?cat=accessory">Aksesuarlar</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Bilgi</h4>
+                <ul>
+                    <li><a href="#">Kargo</a></li>
+                    <li><a href="#">İade</a></li>
+                    <li><a href="#">Özgünlük</a></li>
+                    <li><a href="#">İletişim</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span class="footer-copy">&copy; 2026 SWAVE CULT — Tüm hakları saklıdır</span>
+            <img src="/images/logo.png" alt="Swave Cult" class="footer-wave-icon">
+        </div>
+    </footer>
+
+    <!-- Cart Backdrop -->
+    <div class="cart-backdrop" id="cartBackdrop"></div>
+
+    <!-- Cart Drawer -->
+    <div class="cart-drawer" id="cartDrawer" aria-label="Sepet">
+        <div class="cart-drawer-header">
+            <span class="cart-drawer-title">SEPET</span>
+            <button class="cart-close-btn" id="cartCloseBtn" aria-label="Kapat">&#x2715;</button>
+        </div>
+        <div class="cart-items-list" id="cartItemsList">
+            <div class="cart-empty">
+                <svg width="40" height="40" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4">
+                    <path d="M3 3h2l.4 2M7 13h10l2-8H5.4M7 13L5.4 5M7 13l-1.5 4h11" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="9" cy="19" r="1" fill="currentColor" stroke="none"/>
+                    <circle cx="16" cy="19" r="1" fill="currentColor" stroke="none"/>
+                </svg>
+                SEPET BOŞ
+            </div>
+        </div>
+        <div class="cart-footer" id="cartFooter" hidden>
+            <div class="cart-total-row">
+                <span class="cart-total-label">TOPLAM</span>
+                <span class="cart-total-amt" id="cartTotalAmt">0 ₺</span>
+            </div>
+            <a class="cart-checkout-link" id="cartCheckoutLink" href="https://www.shopier.com/swavetr" target="_blank" rel="noopener">
+                SHOPIER'DA ÖDE →
+            </a>
+            <p class="cart-shopier-note">Ödeme Shopier güvencesiyle gerçekleştirilir.</p>
+        </div>
+    </div>
+
+    <!-- Toast -->
+    <div id="cartToast" class="cart-toast"></div>
+
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

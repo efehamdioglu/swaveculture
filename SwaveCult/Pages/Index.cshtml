@@ -1,0 +1,148 @@
+@page
+@model IndexModel
+@{
+    ViewData["Title"] = null;
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-grid"></div>
+    <div class="glow-orb glow-orb-1"></div>
+    <div class="glow-orb glow-orb-2"></div>
+
+    <div class="hero-content">
+        <div class="hero-tag">Seçilmiş İthalat — Sınırlı Stok</div>
+        <h1 class="hero-title">
+            SWAVE<br><span class="accent">CULTURE</span>
+        </h1>
+        <p class="hero-sub">Doğası gereği nadir &nbsp;·&nbsp; Dünyadan derlendi</p>
+        <div class="hero-actions">
+            <a href="/Shop" class="btn-primary">
+                ALIŞVERİŞE BAŞLA
+                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 8h10M9 4l4 4-4 4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </a>
+            <a href="/Drops" class="btn-ghost">DROPLARI GÖR</a>
+        </div>
+    </div>
+
+    <!-- wave bottom -->
+    <div class="hero-wave">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 90" preserveAspectRatio="none">
+            <path fill="#000000" d="M0,45 C240,90 480,0 720,45 C960,90 1200,0 1440,45 L1440,90 L0,90 Z"/>
+        </svg>
+    </div>
+</section>
+
+<!-- ══ TICKER ══ -->
+<div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+        <span class="ticker-item">CH</span><span class="ticker-dot">·</span>
+        <span class="ticker-item">BAL</span><span class="ticker-dot">·</span>
+        <span class="ticker-item">VET</span><span class="ticker-dot">·</span>
+        <span class="ticker-item">RO</span><span class="ticker-dot">·</span>
+        <span class="ticker-item">HS</span><span class="ticker-dot">·</span>
+        <span class="ticker-item">SWAVE CULT</span><span class="ticker-dot">·</span>
+        <span class="ticker-item">RARE BY NATURE</span><span class="ticker-dot">·</span>
+        <!-- duplicate for seamless loop -->
+        <span class="ticker-item">CH</span><span class="ticker-dot">·</span>
+        <span class="ticker-item">BAL</span><span class="ticker-dot">·</span>
+        <span class="ticker-item">VET</span><span class="ticker-dot">·</span>
+        <span class="ticker-item">RO</span><span class="ticker-dot">·</span>
+        <span class="ticker-item">HS</span><span class="ticker-dot">·</span>
+        <span class="ticker-item">SWAVE CULT</span><span class="ticker-dot">·</span>
+        <span class="ticker-item">RARE BY NATURE</span><span class="ticker-dot">·</span>
+    </div>
+</div>
+
+<!-- ══ FEATURED PRODUCTS ══ -->
+<section class="section">
+    <div class="section-hd">
+        <div>
+            <p class="section-label">Seçilmiş Parçalar</p>
+            <h2 class="section-title">YENİ GELENLER</h2>
+        </div>
+        <a href="/Shop" class="section-more">
+            TÜM PARÇALAR
+            <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M2 7h10M8 3l4 4-4 4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </a>
+    </div>
+    <!-- JS fills this -->
+    <div class="product-grid" id="featuredGrid"></div>
+</section>
+
+<!-- ══ WAVE SEPARATOR ══ -->
+<div class="wave-sep">
+    <svg viewBox="0 0 1440 40" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill="#0d0d0d" d="M0,20 C360,40 720,0 1080,20 C1260,30 1380,15 1440,20 L1440,40 L0,40 Z"/>
+    </svg>
+</div>
+
+<!-- ══ CATEGORIES ══ -->
+<section class="categories-section">
+    <div>
+        <p class="section-label">Kategoriye Göre Göz At</p>
+        <h2 class="section-title">KOLEKSİYONU<br>KEŞFEDİN</h2>
+    </div>
+    <div class="category-grid">
+        <a class="category-card" href="/Shop?cat=sweatshirt">
+            <img class="category-img" src="https://cdn.shopier.app/pictures_large/swavetr_8ea3bd299183a00b67c9c36674a6ef1f.png" alt="Sweatshirts" loading="lazy">
+            <div class="category-info">
+                <span class="category-name">SWEATSHIRTLER</span>
+                <span class="category-count">3 parça</span>
+            </div>
+        </a>
+        <a class="category-card" href="/Shop?cat=pants">
+            <img class="category-img" src="https://cdn.shopier.app/pictures_large/swavetr_7c004e72e82e7316d0e51216bc20ca1e.png" alt="Pants" loading="lazy">
+            <div class="category-info">
+                <span class="category-name">PANTOLONLAR</span>
+                <span class="category-count">8 parça</span>
+            </div>
+        </a>
+        <a class="category-card" href="/Shop?cat=accessory">
+            <img class="category-img" src="https://cdn.shopier.app/pictures_large/swavetr_1197a32e3e1021820b499f893f96c19d.jpeg" alt="Accessories" loading="lazy">
+            <div class="category-info">
+                <span class="category-name">AKSESUARLAR</span>
+                <span class="category-count">13 parça</span>
+            </div>
+        </a>
+        <a class="category-card" href="https://www.shopier.com/swavetr" target="_blank" rel="noopener">
+            <img class="category-img" src="https://cdn.shopier.app/pictures_large/swavetr_dd0d27d25b5a1f90b36fa989bf75a381.png" alt="All Products" loading="lazy">
+            <div class="category-info">
+                <span class="category-name">TÜM ÜRÜNLER</span>
+                <span class="category-count">289 parça — Shopier'da gör</span>
+            </div>
+        </a>
+    </div>
+</section>
+
+<!-- ══ WAVE SEPARATOR ══ -->
+<div class="wave-sep from-bg2">
+    <svg viewBox="0 0 1440 40" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill="#000000" d="M0,20 C480,40 960,0 1440,20 L1440,40 L0,40 Z"/>
+    </svg>
+</div>
+
+<!-- ══ DROP TEASER ══ -->
+<div class="drop-teaser">
+    <img class="drop-teaser-bg" src="https://picsum.photos/seed/drop-hero/1440/620" alt="Drop" loading="lazy">
+    <div class="drop-teaser-overlay">
+        <div class="live-badge">
+            <span class="live-dot"></span>
+            YAKLAŞAN DROP
+        </div>
+        <h2 class="drop-teaser-title">DROP 004<br>GELİYOR</h2>
+        <p class="drop-teaser-sub">15 Mart — 20:00 · Sınırlı ürün</p>
+        <a href="/Drops" class="btn-primary">
+            DROPU GÖR
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </a>
+    </div>
+</div>

@@ -1,0 +1,155 @@
+@page
+@model SwaveCult.Pages.DropsModel
+@{
+    ViewData["Title"] = "Drops";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<!-- ══ DROPS HERO + COUNTDOWN ══ -->
+<section class="drops-header">
+    <div class="drops-header-bg"></div>
+    <div class="drops-header-grid"></div>
+
+    <div class="drops-header-content">
+        <div class="drops-eyebrow">
+            <span class="live-dot"></span>
+            DROP 004 — GELİYOR
+        </div>
+
+        <h1 class="drops-title">15<br>MART</h1>
+        <p class="drops-sub">20:00 İstanbul · Sınırlı Ürün · İlk Gelen Alır</p>
+
+        <!-- Countdown Timer -->
+        <div class="countdown" id="countdown">
+            <div class="cd-unit">
+                <span class="cd-num" id="cdDays">00</span>
+                <span class="cd-label">Gün</span>
+            </div>
+            <span class="cd-sep">:</span>
+            <div class="cd-unit">
+                <span class="cd-num" id="cdHours">00</span>
+                <span class="cd-label">Saat</span>
+            </div>
+            <span class="cd-sep">:</span>
+            <div class="cd-unit">
+                <span class="cd-num" id="cdMins">00</span>
+                <span class="cd-label">Dak</span>
+            </div>
+            <span class="cd-sep">:</span>
+            <div class="cd-unit">
+                <span class="cd-num" id="cdSecs">00</span>
+                <span class="cd-label">Sn</span>
+            </div>
+        </div>
+
+        <a href="#drop-product" class="btn-primary">
+            ÜRÜNÜ GÖR
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px">
+                <path d="M8 3v10M4 9l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </a>
+    </div>
+</section>
+
+<!-- ══ WAVE SEPARATOR ══ -->
+<div class="wave-sep" style="background:var(--bg)">
+    <svg viewBox="0 0 1440 40" preserveAspectRatio="none">
+        <path fill="#111111" d="M0,20 C360,40 720,0 1080,20 C1260,30 1380,15 1440,20 L1440,40 L0,40 Z"/>
+    </svg>
+</div>
+
+<!-- ══ FEATURED DROP PRODUCT ══ -->
+<section class="drop-feature" id="drop-product">
+    <div class="drop-feature-grid">
+
+        <!-- Product Image -->
+        <div class="drop-img-wrap">
+            <img src="https://picsum.photos/seed/drop-004/800/1067" alt="Drop 004 — Vet Studios Collab Hoodie" loading="lazy">
+        </div>
+
+        <!-- Product Info -->
+        <div class="drop-info">
+            <p class="drop-num">DROP 004 / 2026</p>
+            <p class="drop-brand-tag">VET × HELLSTAR</p>
+            <h2 class="drop-product-title">STUDIOS<br>COLLAB<br>HOODIE</h2>
+            <p class="drop-desc">
+                Nadir bir kolaborasyon parçası. Ağır dokulu fırçalanmış polar, tonal nakış ve yıkanmış arşiv grafikleri. Doğrudan temin edildi — yalnızca 12 adet.
+            </p>
+            <div class="drop-specs">
+                <div class="spec-item">
+                    <span class="spec-label">Fiyat</span>
+                    <span class="spec-value">14.500 ₺</span>
+                </div>
+                <div class="spec-item">
+                    <span class="spec-label">Adet</span>
+                    <span class="spec-value">12</span>
+                </div>
+                <div class="spec-item">
+                    <span class="spec-label">Drop</span>
+                    <span class="spec-value">15 MAR</span>
+                </div>
+            </div>
+            <div class="drop-actions">
+                <a href="#" class="btn-primary">
+                    HEMEN AL — SHOPIER
+                    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" style="width:13px;height:13px">
+                        <path d="M3 8h10M9 4l4 4-4 4" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+                <button class="btn-outline" onclick="this.textContent='✓  BİLDİRİLDİ'">
+                    BİLGİLENDİR
+                </button>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ══ WAVE SEPARATOR ══ -->
+<div class="wave-sep" style="background:var(--card)">
+    <svg viewBox="0 0 1440 40" preserveAspectRatio="none">
+        <path fill="#0d0d0d" d="M0,20 C480,0 960,40 1440,20 L1440,40 L0,40 Z"/>
+    </svg>
+</div>
+
+<!-- ══ PAST DROPS ══ -->
+<section class="past-drops">
+    <div>
+        <p class="section-label">Arşiv</p>
+        <h2 class="section-title">GEÇMİŞ DROPLAR</h2>
+    </div>
+
+    <div class="past-drop-grid">
+
+        <!-- Drop 003 — Sold Out -->
+        <div class="past-drop-card">
+            <img src="https://picsum.photos/seed/drop-003/600/800" alt="Drop 003" loading="lazy">
+            <div class="past-drop-info">
+                <span class="drop-status status-sold">TÜKENDİ</span>
+                <p class="past-drop-name">BALENCI TRIPLE<br>ARCHIVE JACKET</p>
+                <p class="past-drop-brand">BAL — DROP 003</p>
+            </div>
+        </div>
+
+        <!-- Drop 002 — Sold Out -->
+        <div class="past-drop-card">
+            <img src="https://picsum.photos/seed/drop-002/600/800" alt="Drop 002" loading="lazy">
+            <div class="past-drop-info">
+                <span class="drop-status status-sold">TÜKENDİ</span>
+                <p class="past-drop-name">CH CROSS LEATHER<br>VARSITY</p>
+                <p class="past-drop-brand">CH — DROP 002</p>
+            </div>
+        </div>
+
+        <!-- Drop 001 — Sold Out -->
+        <div class="past-drop-card">
+            <img src="https://picsum.photos/seed/drop-001/600/800" alt="Drop 001" loading="lazy">
+            <div class="past-drop-info">
+                <span class="drop-status status-sold">TÜKENDİ</span>
+                <p class="past-drop-name">RO RUNWAY<br>CARGO SET</p>
+                <p class="past-drop-brand">RO — DROP 001</p>
+            </div>
+        </div>
+
+    </div>
+</section>

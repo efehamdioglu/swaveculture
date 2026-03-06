@@ -1,0 +1,70 @@
+@page
+@model SwaveCult.Pages.ShopModel
+@{
+    ViewData["Title"] = "Shop";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<!-- ══ SHOP HEADER ══ -->
+<div class="shop-header">
+    <div class="shop-header-inner">
+        <div>
+            <p class="section-label" style="margin-bottom:10px">Tüm Parçalar</p>
+            <h1 class="shop-page-title">ARŞİV</h1>
+        </div>
+        <span class="shop-meta" id="shopCount">16 PIECES</span>
+    </div>
+</div>
+
+<!-- ══ FILTER BAR ══ -->
+<div class="filter-bar" id="filterBar">
+
+    <!-- Category filters -->
+    <div class="filter-group">
+        <span class="filter-label">Kategori</span>
+        <button class="filter-btn active" data-cat="all">Tümü</button>
+        <button class="filter-btn" data-cat="tshirt">T-Shirt</button>
+        <button class="filter-btn" data-cat="sweatshirt">Sweatshirt</button>
+        <button class="filter-btn" data-cat="pants">Pantolon</button>
+        <button class="filter-btn" data-cat="accessory">Aksesuar</button>
+    </div>
+
+    <!-- Brand filters -->
+    <div class="filter-group">
+        <span class="filter-label">Marka</span>
+        <button class="filter-btn active" data-brand="all">Tümü</button>
+        <button class="filter-btn" data-brand="CH">CH</button>
+        <button class="filter-btn" data-brand="RO">RO</button>
+        <button class="filter-btn" data-brand="Hellstar">HS</button>
+        <button class="filter-btn" data-brand="Supreme">SUP</button>
+        <button class="filter-btn" data-brand="Sprayground">SPG</button>
+        <button class="filter-btn" data-brand="Gallery Dept">GD</button>
+    </div>
+
+</div>
+
+<!-- ══ PRODUCT GRID ══ -->
+<div class="shop-grid-wrap">
+    <div class="shop-grid" id="shopGrid">
+        <!-- JS renders products here -->
+    </div>
+</div>
+
+@section Scripts {
+<script>
+    // Pick up URL query params for pre-filtering (e.g. /Shop?cat=tshirt)
+    (function () {
+        const params = new URLSearchParams(window.location.search);
+        const cat = params.get('cat');
+        const brand = params.get('brand');
+        if (cat) {
+            const btn = document.querySelector('[data-cat="' + cat + '"]');
+            if (btn) btn.click();
+        }
+        if (brand) {
+            const btn = document.querySelector('[data-brand="' + brand + '"]');
+            if (btn) btn.click();
+        }
+    })();
+</script>
+}
